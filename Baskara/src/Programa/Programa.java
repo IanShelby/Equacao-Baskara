@@ -10,7 +10,9 @@ public class Programa {
 
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
-		
+		int opcao;
+	do {
+		opcao = 1;
 		System.out.println("Digite a sua equação de baskara que vou resolver!");
 	try {	
 		System.out.print("Digite o a: ");
@@ -44,9 +46,18 @@ public class Programa {
 			System.out.printf("X2 = %.2f%n",x2);
 			System.out.println("A equação não tem solução real pois o delta é menor que zero");
 		}
-		sc.close();
+		
+		System.out.println("Digite sua opção");
+		System.out.print("1- Continuar | 2-Sair : ");
+		opcao = sc.nextInt();
+		sc.nextLine();
+		
 	}catch(InputMismatchException e) {
 		System.out.println("Digite um número por favor!");
-	}
+		sc.nextLine();
+		}
+	
+	} while (opcao != 2);
+	sc.close();
   }
 }
